@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamal Mohamed | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* إضافات تصميمية للـ Portfolio فقط */
+        .portfolio-section {
+            background-color: #1a1a2e;
+            padding: 100px 0;
+        }
+        .portfolio-card {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #01EEFF;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(1, 238, 255, 0.3);
+            background: rgba(0, 0, 0, 0.9);
+        }
+        .portfolio-modal {
+            background-color: rgba(10, 10, 20, 0.95);
+        }
+        .portfolio-modal .modal-content {
+            border: 2px solid #01EEFF;
+        }
+        .project-quote {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        .project-highlight {
+            color: #01EEFF;
+            font-style: italic;
+            margin: 15px 0;
+            padding-left: 20px;
+            border-left: 3px solid #01EEFF;
+        }
+
+        /* إضافات جديدة لقسم Contact */
+        #contact {
+            background-color: #0C0F16;
+            padding: 100px 0;
+        }
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        .contact-form {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(1, 238, 255, 0.2);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        @media (max-width: 480px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+        .form-row .form-group {
+            flex: 1;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #01EEFF;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(1, 238, 255, 0.3);
+            border-radius: 8px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #01EEFF;
+            box-shadow: 0 0 10px rgba(1, 238, 255, 0.2);
+        }
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .submit-btn {
+            background-color: #01EEFF;
+            color: #0C0F16;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(1, 238, 255, 0.4);
+        }
+        .social-contact {
+            flex: 0.5;
+        }
+        .social-icons-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .social-icon-contact {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .social-icon-contact:hover {
+            background: rgba(1, 238, 255, 0.1);
+            transform: translateX(5px);
+        }
+        .social-icon-contact i {
+            font-size: 24px;
+            color: #01EEFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-container">
+        <!-- Header -->
+        <header>
+            <h1 class="logo">Portfolio.</h1>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#service" class="nav-link">Service</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Home Section -->
+        <section id="home" class="section">
+            <div class="container">
+                <div class="left-section">
+                    <div class="intro">
+                        <p class="greeting">Hello, I'm</p>
+                        <h1 class="name">Gamal <span>Mohamed</span></h1>
+                        <div class="profession">
+                            <span>And I'm a </span>
+                            <span id="typing"></span>
+                        </div>
+                    </div>
+                    
+                    <p class="bio">
+                        I'm a passionate designer and developer who brings ideas to life through thoughtful UI/UX design, 
+                        mobile and web development, branding, and custom character design.
+                    </p>
+                    
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/gemoo_design1" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@gemoo_design1" target="_blank" class="social-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.behance.net/gamalmohamed74" target="_blank" class="social-icon">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/gamal-mohamed-26330832a" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    
+                    <button class="download-btn">
+                        Download CV <i class="fas fa-download"></i>
+                    </button>
+                </div>
+                
+                <div class="right-section">
+                    <div class="profile-circle"> 
+                        <div class="inner-circle"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="about-container">
+                    <div class="profile-circle-large"></div>
+                    
+                    <div class="about-content">
+                        <h2 class="about-title">About <span class="blue">Me</span></h2>
+                        
+                        <div class="typing-about">
+                            <span class="static">I'm </span>
+                            <span class="typing" id="typing-about"></span>
+                        </div>
+                        
+                        <p class="about-text">
+                            I'm a passionate designer and developer who brings ideas to life through thoughtful UI/UX design, mobile and web development, branding, and custom character design. Whether you're building an app, a website, or a visual identity — I'm here to make it look and work great.
+                        </p>
+                        
+                        <button class="see-more-btn" onclick="scrollToSection('skills')">See more</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="skills-container">
+                    <h2 class="skills-title">My <span>Skills</span></h2>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-pencil-ruler"></i>
+                            </div>
+                            <h3 class="skill-name">UI/UX Design</h3>
+                            <p class="skill-desc">
+                                Professional UI/UX design using Figma and Adobe XD.
+                            </p>
+                        </div>
+                        
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3 class="skill-name">Web Development</h3>
+                            <p class="skill-desc">
+                                Building responsive websites using modern technologies.
+                            </p>
+                        </div>
+                        
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3 class="skill-name">Mobile App Development</h3>
+                            <p class="skill-desc">
+                                Developing cross-platform mobile applications.
+                            </p>
+                        </div>
+                        
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h3 class="skill-name">Logo Design</h3>
+                            <p class="skill-desc">
+                                Crafting unique and memorable brand identities.
+                            </p>
+                        </div>
+                        
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h3 class="skill-name">Character Design</h3>
+                            <p class="skill-desc">
+                                Designing original cartoon and anime characters.
+                            </p>
+                        </div>
+                        
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="skill-name">Branding</h3>
+                            <p class="skill-desc">
+                                Developing comprehensive brand identities.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Section -->
+        <section id="service" class="section">
+            <div class="container">
+                <div class="services-container">
+                    <h2 class="services-title">Our <span>Services</span></h2>
+                    
+                    <div class="services-grid">
+                        <!-- Service 1 -->
+                        <div class="service-card" onclick="openServiceModal('uiux')">
+                            <div class="service-icon">
+                                <i class="fas fa-pencil-ruler"></i>
+                            </div>
+                            <h3 class="service-name">UX-UI Designer</h3>
+                            <p class="service-desc">
+                                "I design intuitive UI/UX solutions, creating seamless user experiences and functional interfaces."
+                            </p>
+                            <button class="read-more-btn">Read more</button>
+                        </div>
+                        
+                        <!-- Service 2 -->
+                        <div class="service-card" onclick="openServiceModal('appdev')">
+                            <div class="service-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3 class="service-name">App Developer</h3>
+                            <p class="service-desc">
+                                "I develop custom mobile apps that are high-performing, user-friendly, and visually appealing."
+                            </p>
+                            <button class="read-more-btn">Read more</button>
+                        </div>
+                        
+                        <!-- Service 3 -->
+                        <div class="service-card" onclick="openServiceModal('webdev')">
+                            <div class="service-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3 class="service-name">Web Developer</h3>
+                            <p class="service-desc">
+                                "I create responsive websites that prioritize user experience, speed, and interactivity."
+                            </p>
+                            <button class="read-more-btn">Read more</button>
+                        </div>
+                        
+                        <!-- Service 4 -->
+                        <div class="service-card" onclick="openServiceModal('logo')">
+                            <div class="service-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h3 class="service-name">Logo Designer</h3>
+                            <p class="service-desc">
+                                "I design unique logos that capture your brand's identity and make it stand out in the market."
+                            </p>
+                            <button class="read-more-btn">Read more</button>
+                        </div>
+                        
+                        <!-- Service 5 -->
+                        <div class="service-card" onclick="openServiceModal('character')">
+                            <div class="service-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h3 class="service-name">Character Designer</h3>
+                            <p class="service-desc">
+                                "I create original cartoon characters for games, animations, and marketing materials."
+                            </p>
+                            <button class="read-more-btn">Read more</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="section portfolio-section">
+            <div class="container">
+                <h2 class="services-title">My <span>Projects</span></h2>
+                
+                <div class="services-grid">
+                    <!-- Project 1: UI/UX Design -->
+                    <div class="service-card portfolio-card" onclick="openPortfolioModal('uiux')">
+                        <div class="service-icon">
+                            <i class="fas fa-pencil-ruler"></i>
+                        </div>
+                        <h3 class="service-name">UI/UX Design</h3>
+                        <p class="service-desc">
+                            Professional design projects with Figma
+                        </p>
+                    </div>
+                    
+                    <!-- Project 2: App Development -->
+                    <div class="service-card portfolio-card" onclick="openPortfolioModal('appdev')">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="service-name">App Development</h3>
+                        <p class="service-desc">
+                            Mobile apps built with Flutter
+                        </p>
+                    </div>
+                    
+                    <!-- Project 3: Web Development -->
+                    <div class="service-card portfolio-card" onclick="openPortfolioModal('webdev')">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="service-name">Web Development</h3>
+                        <p class="service-desc">
+                            Responsive websites with modern tech
+                        </p>
+                    </div>
+                    
+                    <!-- Project 4: Logo Design -->
+                    <div class="service-card portfolio-card" onclick="openPortfolioModal('logo')">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3 class="service-name">Logo Design</h3>
+                        <p class="service-desc">
+                            Unique brand identities
+                        </p>
+                    </div>
+                    
+                    <!-- Project 5: Character Design -->
+                    <div class="service-card portfolio-card" onclick="openPortfolioModal('character')">
+                        <div class="service-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3 class="service-name">Character Design</h3>
+                        <p class="service-desc">
+                            Original cartoon characters
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section الجديدة -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="services-title">Contact<span>Me</span></h2>
+                
+                <div class="contact-container">
+                    <form id="contact-form" class="contact-form" action="https://formspree.io/f/gemoo0734@gmail.com" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name"> First Name</label>
+                                <input type="text" id="first-name" name="first-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" id="last-name" name="last-name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Eamil Address </label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Mob. Number </label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Massage</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message 
+                        </button>
+                    </form>
+                    
+                    <div class="social-contact">
+                        <div class="social-icons-contact">
+                            <a href="https://wa.me/966549155148" target="_blank" class="social-icon-contact">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                            
+                            <a href="https://www.snapchat.com/add/j_mohamed348?share_id=uCOc38eyCPM&locale=en-US" target="_blank" class="social-icon-contact">
+                                <i class="fab fa-snapchat"></i>
+                                <span> Snapchat</span>
+                            </a>
+                            
+                            <a href="https://t.me/gamal2419" target="_blank" class="social-icon-contact">
+                                <i class="fab fa-telegram"></i>
+                                <span>Telegram</span>
+                            </a>
+                            
+                            <a href="https://x.com/gemoo_design1?t=PmpmhJRIKO7fgYUDDw3g9g&s=09" target="_blank" class="social-icon-contact">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Service Modals -->
+    <div id="service-modal" class="service-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeServiceModal()">&times;</span>
+            
+            <!-- UI/UX Designer Modal -->
+            <div id="uiux-modal" class="service-details">
+                <div class="service-header">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="UI/UX Design">
+                    </div>
+                    <h2>UI/UX Designer</h2>
+                </div>
+                
+                <div class="service-body">
+                    <p class="service-quote">
+                        Thanks for checking out my UI/UX design services!<br>
+                        I specialize in creating clean, modern, and user-friendly interfaces that make every interaction smooth and meaningful. Whether it's a website or mobile app, I focus on delivering an experience that feels intuitive and looks amazing.
+                    </p>
+                    
+                    <div class="social-section">
+                        <p>Want to see more of my creative journey?<br>Check out my work and daily design content here:</p>
+                        
+                        <div class="modal-social-icons">
+                            <a href="https://www.instagram.com/gemoo_design1" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.tiktok.com/@gemoo_design1" target="_blank">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
+                            <a href="https://www.behance.net/gamalmohamed74" target="_blank">
+                                <i class="fab fa-behance"></i> Behance
+                            </a>
+                            <a href="https://www.linkedin.com/in/gamal-mohamed-26330832a" target="_blank">
+                                <i class="fab fa-linkedin-in"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <p class="service-ending">Let's connect and create something awesome together!</p>
+                </div>
+            </div>
+            
+            <!-- App Developer Modal -->
+            <div id="appdev-modal" class="service-details">
+                <div class="service-header">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="App Development">
+                    </div>
+                    <h2>App Developer</h2>
+                </div>
+                
+                <div class="service-body">
+                    <p class="service-quote">
+                        Thanks for checking out my app development services!<br>
+                        I specialize in creating high-performance, user-friendly mobile applications with beautiful interfaces. Using modern technologies, I build apps that work seamlessly across platforms.
+                    </p>
+                    
+                    <div class="social-section">
+                        <p>Want to see more of my development work?<br>Check out my projects here:</p>
+                        
+                        <div class="modal-social-icons">
+                            <a href="https://www.instagram.com/gemoo_design1" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.tiktok.com/@gemoo_design1" target="_blank">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
+                            <a href="https://www.behance.net/gamalmohamed74" target="_blank">
+                                <i class="fab fa-behance"></i> Behance
+                            </a>
+                            <a href="https://www.linkedin.com/in/gamal-mohamed-26330832a" target="_blank">
+                                <i class="fab fa-linkedin-in"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <p class="service-ending">Let's build something amazing together!</p>
+                </div>
+            </div>
+            
+            <!-- Web Developer Modal -->
+            <div id="webdev-modal" class="service-details">
+                <div class="service-header">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Web Development">
+                    </div>
+                    <h2>Web Developer</h2>
+                </div>
+                
+                <div class="service-body">
+                    <p class="service-quote">
+                        Thanks for checking out my web development services!<br>
+                        I create responsive, fast-loading websites with excellent user experience. From simple landing pages to complex web applications, I ensure your site looks great on all devices.
+                    </p>
+                    
+                    <div class="social-section">
+                        <p>Want to see more of my web projects?<br>Check out my work here:</p>
+                        
+                        <div class="modal-social-icons">
+                            <a href="https://www.instagram.com/gemoo_design1" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.tiktok.com/@gemoo_design1" target="_blank">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
+                            <a href="https://www.behance.net/gamalmohamed74" target="_blank">
+                                <i class="fab fa-behance"></i> Behance
+                            </a>
+                            <a href="https://www.linkedin.com/in/gamal-mohamed-26330832a" target="_blank">
+                                <i class="fab fa-linkedin-in"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <p class="service-ending">Let's create an outstanding web presence for you!</p>
+                </div>
+            </div>
+            
+            <!-- Logo Designer Modal -->
+            <div id="logo-modal" class="service-details">
+                <div class="service-header">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Logo Design">
+                    </div>
+                    <h2>Logo Designer</h2>
+                </div>
+                
+                <div class="service-body">
+                    <p class="service-quote">
+                        Thanks for checking out my logo design services!<br>
+                        I create unique, memorable logos that perfectly represent your brand's identity. Each logo is carefully crafted to be distinctive, scalable, and effective across all media.
+                    </p>
+                    
+                    <div class="social-section">
+                        <p>Want to see more of my branding work?<br>Check out my portfolio here:</p>
+                        
+                        <div class="modal-social-icons">
+                            <a href="https://www.instagram.com/gemoo_design1" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.tiktok.com/@gemoo_design1" target="_blank">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
+                            <a href="https://www.behance.net/gamalmohamed74" target="_blank">
+                                <i class="fab fa-behance"></i> Behance
+                            </a>
+                            <a href="https://www.linkedin.com/in/gamal-mohamed-26330832a" target="_blank">
+                                <i class="fab fa-linkedin-in"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <p class="service-ending">Let's create a logo that truly represents your brand!</p>
+                </div>
+            </div>
+            
+            <!-- Character Designer Modal -->
+            <div id="character-modal" class="service-details">
+                <div class="service-header">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1637858868799-7f26a0640eb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Character Design">
+                    </div>
+                    <h2>Character Designer</h2>
+                </div>
+                
+                <div class="service-body">
+                    <p class="service-quote">
+                        Thanks for checking out my character design services!<br>
+                        I specialize in creating original cartoon and anime characters with unique personalities. From concept sketches to final renders, I bring characters to life with attention to detail and expressive designs.
+                    </p>
+                    
+                    <div class="social-section">
+                        <p>Want to see more of my character designs?<br>Check out my portfolio here:</p>
+                        
+                        <div class="modal-social-icons">
+                            <a href="https://www.instagram.com/gemoo_design1" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.tiktok.com/@gemoo_design1" target="_blank">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
+                            <a href="https://www.behance.net/gamalmohamed74" target="_blank">
+                                <i class="fab fa-behance"></i> Behance
+                            </a>
+                            <a href="https://www.linkedin.com/in/gamal-mohamed-26330832a" target="_blank">
+                                <i class="fab fa-linkedin-in"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <p class="service-ending">Let's create an unforgettable character together!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modals -->
+    <div id="portfolio-modal" class="service-modal portfolio-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePortfolioModal()">&times;</span>
+            
+            <!-- UI/UX Design Modal -->
+            <div id="portfolio-uiux-modal" class="service-details">
+                <div class="service-header">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="UI/UX Design">
+                    </div>
+                    <h2>UI/UX Design Projects</h2>
+                </div>
+                
+                <div class="service-body">
+                    <p class="project-quote">
+                        I design user interfaces and user experiences professionally using Figma.
+                        I focus on creating clean, interactive, and user-friendly designs for websites and mobile apps.
+                    </p>
+                    
+                    <p class="project-highlight">
+                        If you'd like to learn more or see a design that interests you, feel free to message me anytime.
+                    </p>
+                    
+                    <div class="social-section">
+                        <div class="modal-social-icons">
+                            <a href="https://www.instagram.com/gemoo_design1" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.tiktok.com/@gemoo_design1" target="_blank">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
+                            <a href="https://www.behance.net/gamalmohamed74" target="_blank">
+                                <i class="fab fa-behance"></i> Behance
+                            </a>
+                            <a href="https://www.linkedin.com/in/gamal-mohamed-26330832a" target="_blank">
+                                <i class="fab fa-linkedin-in"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- App Development Modal -->
+            <div id="portfolio-appdev-modal" class="service-details">
+                <div class="service-header">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="App Development">
+                    </div>
+                    <h2>App Development Projects</h2>
+                </div>
+                
+                <div class="service-body">
+                    <p class="project-quote">
+                        I've started my journey in mobile app development using Flutter.
+                        I design app interfaces first in Figma, then develop them into working apps step by step.
+                    </p>
+                    
+                    <p class="project-highlight">
+                        You'll see real app projects here soon. Feel free to reach out if you're curious or want to collaborate.
+                    </p>
+                    
+                    <div class="social-section">
+                        <div class="modal-social-icons">
+                            <a href="https://www.instagram.com/gemoo_design1" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.tiktok.com/@gemoo_design1" target="_blank">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
+                            <a href="https://www.behance.net/gamalmohamed74" target="_blank">
+                                <i class="fab fa-behance"></i> Behance
+                            </a>
+                            <a href="https://www.linkedin.com/in/gamal-mohamed-26330832a" target="_blank">
+                                <i class="fab fa-linkedin-in"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Web Development Modal -->
+            <div id="portfolio-webdev-modal" class="service-details">
+                <div class="service-header">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Web Development">
+                    </div>
+                    <h2>Web Development Projects</h2>
+                </div>
+                
+                <div class="service-body">
+                    <p class="project-quote">
+                        I'm currently learning web development using HTML, CSS, JavaScript, and frameworks like Bootstrap and Tailwind.
+                        I take a design-first approach by starting in Figma and then converting it into real, functional websites.
+                    </p>
+                    
+                    <p class="project-highlight">
+                        My first web projects will be live soon — stay tuned!
+                    </p>
+                    
+                    <div class="social-section">
+                        <div class="modal-social-icons">
+                            <a href="https://www.instagram.com/gemoo_design1" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.tiktok.com/@gemoo_design1" target="_blank">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
+                            <a href="https://www.behance.net/gamalmohamed74" target="_blank">
+                                <i class="fab fa-behance"></i> Behance
+                            </a>
+                            <a href="https://www.linkedin.com/in/gamal-mohamed-26330832a" target="_blank">
+                                <i class="fab fa-linkedin-in"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Logo Design Modal -->
+            <div id="portfolio-logo-modal" class="service-details">
+                <div class="service-header">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Logo Design">
+                    </div>
+                    <h2>Logo Design Projects</h2>
+                </div>
+                
+                <div class="service-body">
+                    <p class="project-quote">
+                        I create unique and meaningful logos that reflect the identity of a brand or project.
+                        Each logo is designed with thoughtful colors, shapes, and typography to make it memorable and effective.
+                    </p>
+                    
+                    <p class="project-highlight">
+                        Need a logo that truly represents your idea? I'm ready to help.
+                    </p>
+                    
+                    <div class="social-section">
+                        <div class="modal-social-icons">
+                            <a href="https://www.instagram.com/gemoo_design1" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.tiktok.com/@gemoo_design1" target="_blank">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
+                            <a href="https://www.behance.net/gamalmohamed74" target="_blank">
+                                <i class="fab fa-behance"></i> Behance
+                            </a>
+                            <a href="https://www.linkedin.com/in/gamal-mohamed-26330832a" target="_blank">
+                                <i class="fab fa-linkedin-in"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Character Design Modal -->
+            <div id="portfolio-character-modal" class="service-details">
+                <div class="service-header">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1637858868799-7f26a0640eb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Character Design">
+                    </div>
+                    <h2>Character Design Projects</h2>
+                </div>
+                
+                <div class="service-body">
+                    <p class="project-quote">
+                        I design cartoon and anime characters with a unique style that can be used for branding, social media, games, and more.
+                        From sketch to final render, I focus on every detail to bring your vision to life.
+                    </p>
+                    
+                    <p class="project-highlight">
+                        Got an idea for a character? Let's turn it into art!
+                    </p>
+                    
+                    <div class="social-section">
+                        <div class="modal-social-icons">
+                            <a href="https://www.instagram.com/gemoo_design1" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.tiktok.com/@gemoo_design1" target="_blank">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </a>
+                            <a href="https://www.behance.net/gamalmohamed74" target="_blank">
+                                <i class="fab fa-behance"></i> Behance
+                            </a>
+                            <a href="https://www.linkedin.com/in/gamal-mohamed-26330832a" target="_blank">
+                                <i class="fab fa-linkedin-in"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // دالة لفتح Portfolio Modal
+        function openPortfolioModal(serviceId) {
+            const modal = document.getElementById('portfolio-modal');
+            const serviceModal = document.getElementById(`portfolio-${serviceId}-modal`);
+            
+            document.querySelectorAll('#portfolio-modal .service-details').forEach(detail => {
+                detail.style.display = 'none';
+            });
+            
+            serviceModal.style.display = 'block';
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePortfolioModal() {
+            const modal = document.getElementById('portfolio-modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // إغلاق Modal عند النقر خارج المحتوى
+        document.getElementById('portfolio-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePortfolioModal();
+            }
+        });
+
+        // إغلاق Modal عند الضغط على Esc
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePortfolioModal();
+            }
+        });
+
+        // تفعيل النموذج
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                if (!this.checkValidity()) {
+                    e.preventDefault();
+                    alert('الرجاء ملء جميع الحقول المطلوبة بشكل صحيح');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
