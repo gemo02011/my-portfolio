@@ -284,7 +284,6 @@ header {
     background: rgba(255, 255, 255, 0.05);
 }
 
-/* لما تكون الشاشة صغيرة */
 @media (max-width: 768px) {
   .right-section {
     position: relative;
@@ -292,8 +291,20 @@ header {
     right: auto;
     transform: none;
     margin-bottom: 20px;
+    display: flex; /* جديد */
+    justify-content: center; /* جديد */
   }
-}
+
+  /* تنسيقات حاوية اللوجو */
+  .logo-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px; /* تعديل هنا */
+    border: 3px solid #01EEFF; /* stroke أزرق */
+    border-radius: 50%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+  }
 
 
 /* About Section */
