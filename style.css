@@ -275,7 +275,7 @@ header {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: linear-gradient(135deg, #01EEFF, #0178FF);
+    background: (, #01EEFF, #0178FF);
     position: relative;
     display: flex;
     justify-content: center;
