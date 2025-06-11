@@ -259,8 +259,8 @@ header {
 }
 
 .right-section {
-    width: 100px;
-    height: 100px;
+    width: 350px;
+    height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -271,8 +271,27 @@ header {
 }
 
 /* Profile Circle */
+.profile-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #01EEFF, #0178FF);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 50px rgba(1, 238, 255, 0.3);
+}
 
+.inner-circle {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    position: absolute;
+}
 
+/* لما تكون الشاشة صغيرة */
 @media (max-width: 768px) {
   .right-section {
     position: relative;
@@ -280,20 +299,8 @@ header {
     right: auto;
     transform: none;
     margin-bottom: 20px;
-    display: flex; /* جديد */
-    justify-content: center; /* جديد */
   }
-
-  /* تنسيقات حاوية اللوجو */
-  .logo-container {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 30px; /* تعديل هنا */
-    border: 3px solid #01EEFF; /* stroke أزرق */
-    border-radius: 50%;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.05);
-  }
+}
 
 
 /* About Section */
