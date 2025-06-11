@@ -283,12 +283,6 @@ header {
     box-shadow: 0 0 50px rgba(1, 238, 255, 0.3);
 }
 
-.inner-circle {
-    width: 90%;
-    height: 90%;
-    border-radius: 50%;
-    position: absolute;
-}
 
 /* لما تكون الشاشة صغيرة */
 @media (max-width: 768px) {
