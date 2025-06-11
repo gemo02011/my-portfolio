@@ -271,17 +271,17 @@ header {
 }
 
 /* Profile Circle */
-.logo-container.large {
-    width: 350px;
-    height: 350px;
-}
-
-.profile-logo {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.logo-container {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
-    filter: drop-shadow(0 0 10px rgba(1, 238, 255, 0.5));
+    padding: 15px;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 0 20px rgba(1, 238, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 /* تعديلات التجاوب */
@@ -292,11 +292,7 @@ header {
         margin: 30px auto;
     }
     
-    .logo-container.large {
-        width: 250px;
-        height: 250px;
-    }
-}
+   
 
 @media (max-width: 480px) {
     .logo-container {
