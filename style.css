@@ -259,8 +259,8 @@ header {
 }
 
 .right-section {
-    width: 350px;
-    height: 350px;
+    width: 100px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
