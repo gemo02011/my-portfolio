@@ -321,14 +321,10 @@ header {
     gap: 80px;
 }
 
-.profile-circle-large {
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #01EEFF, #0178FF);
-    position: relative;
-    flex-shrink: 0;
-    box-shadow: 0 0 50px rgba(1, 238, 255, 0.3);
+ .logo-container.large {
+    width: 250px;
+    height: 250px;
+  }
 }
 
 .about-content {
