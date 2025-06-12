@@ -1,5 +1,3 @@
-
-
 /* Global Styles */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -273,29 +271,17 @@ header {
 }
 
 /* Profile Circle */
-.logo-container {
-    width: 250px;
-    height: 250px;
+.profile-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #01EEFF, #0178FF);
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    padding: 15px;
-    border: 3px solid var(--main-color);
-    box-shadow: 0 0 20px rgba(1, 238, 255, 0.3);
-    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 50px rgba(1, 238, 255, 0.3);
 }
-
-/* تعديلات التجاوب */
-@media (max-width: 768px) {
-    .logo-container {
-        width: 200px;
-        height: 200px;
-        margin: 30px auto;
-    }
-    
-   
-
 
 .inner-circle {
     width: 90%;
@@ -305,6 +291,16 @@ header {
     position: absolute;
 }
 
+/* لما تكون الشاشة صغيرة */
+@media (max-width: 768px) {
+  .right-section {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    margin-bottom: 20px;
+  }
+}
 
 
 /* About Section */
@@ -321,43 +317,14 @@ header {
     gap: 80px;
 }
 
-.logo-container.large {
-    width: 350px;
-    height: 350px;
-}
-
-.profile-logo {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.profile-circle-large {
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
-    filter: drop-shadow(0 0 10px rgba(1, 238, 255, 0.5));
-}
-
-/* تعديلات التجاوب */
-@media (max-width: 768px) {
-    .logo-container {
-        width: 200px;
-        height: 200px;
-        margin: 30px auto;
-    }
-    
-    .logo-container.large {
-        width: 250px;
-        height: 250px;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo-container {
-        width: 150px;
-        height: 150px;
-    }
-    
-    .logo-container.large {
-        width: 200px;
-        height: 200px;
-    }
+    background: linear-gradient(135deg, #01EEFF, #0178FF);
+    position: relative;
+    flex-shrink: 0;
+    box-shadow: 0 0 50px rgba(1, 238, 255, 0.3);
 }
 
 .about-content {
