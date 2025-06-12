@@ -337,16 +337,69 @@ header {
     gap: 80px;
 }
 
-.profile-circle-large {
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #01EEFF, #0178FF);
-    position: relative;
-    flex-shrink: 0;
-    box-shadow: 0 0 50px rgba(1, 238, 255, 0.3);
+/* تنسيقات الحاوية الرئيسية */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    padding: 40px 0;
 }
 
+/* تنسيقات الدائرة */
+.logo-container-about {
+    width: 420px;
+    height: 420px;
+    min-width: 420px;
+    border: 4px solid #01EEFF;
+    border-radius: 50%;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 40px rgba(1, 238, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* تنسيقات الصورة داخل الدائرة */
+.profile-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 15px rgba(1, 238, 255, 0.7));
+}
+
+/* تعديلات التجاوب */
+@media (max-width: 992px) {
+    .about-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .logo-container-about {
+        width: 350px;
+        height: 350px;
+        min-width: unset;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-container-about {
+        width: 280px;
+        height: 280px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container-about {
+        width: 220px;
+        height: 220px;
+        border-width: 3px;
+    }
+}
 .about-content {
     flex: 1;
 }
