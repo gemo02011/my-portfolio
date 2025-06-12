@@ -258,6 +258,17 @@ header {
     font-size: 14px;
 }
 
+.right-section {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+}
 
 /* Profile Circle */
 /* ===== تنسيقات اللوجو الجديد في الصفحة الأولى ===== */
