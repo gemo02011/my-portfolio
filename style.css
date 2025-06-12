@@ -337,73 +337,68 @@ header {
     gap: 80px;
 }
 
-/* ===== تنسيقات الصفحة الثانية الجديدة ===== */
-.about-hero {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  margin-top: 40px;
+/* تنسيقات الحاوية الرئيسية */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    padding: 40px 0;
 }
 
-.about-logo-container {
-  width: 420px;
-  height: 420px;
-  min-width: 420px; /* منع الضغط */
-  border: 4px solid #01EEFF;
-  border-radius: 50%;
-  padding: 25px;
-  background: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 40px rgba(1, 238, 255, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* تنسيقات الدائرة */
+.logo-container-about {
+    width: 420px;
+    height: 420px;
+    min-width: 420px;
+    border: 4px solid #01EEFF;
+    border-radius: 50%;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 40px rgba(1, 238, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
 }
 
-.about-logo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 50%;
-  filter: 
-    drop-shadow(0 0 15px rgba(1, 238, 255, 0.7))
-    brightness(1.05);
+/* تنسيقات الصورة داخل الدائرة */
+.profile-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 15px rgba(1, 238, 255, 0.7));
 }
 
 /* تعديلات التجاوب */
-@media (max-width: 1200px) {
-  .about-logo-container {
-    width: 380px;
-    height: 380px;
-    min-width: 380px;
-  }
-}
-
 @media (max-width: 992px) {
-  .about-hero {
-    flex-direction: column;
-  }
-  
-  .about-logo-container {
-    margin-bottom: 40px;
-  }
+    .about-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .logo-container-about {
+        width: 350px;
+        height: 350px;
+        min-width: unset;
+        margin-bottom: 30px;
+    }
 }
 
 @media (max-width: 768px) {
-  .about-logo-container {
-    width: 320px;
-    height: 320px;
-    min-width: 320px;
-    padding: 20px;
-  }
+    .logo-container-about {
+        width: 280px;
+        height: 280px;
+        padding: 20px;
+    }
 }
 
 @media (max-width: 480px) {
-  .about-logo-container {
-    width: 260px;
-    height: 260px;
-    min-width: 260px;
-    border-width: 3px;
-  }
+    .logo-container-about {
+        width: 220px;
+        height: 220px;
+        border-width: 3px;
+    }
 }
 .about-content {
     flex: 1;
