@@ -258,17 +258,6 @@ header {
     font-size: 14px;
 }
 
-.right-section {
-    width: 350px;
-    height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    right: 50px;
-    transform: translateY(-50%);
-}
 
 /* Profile Circle */
 /* ===== تنسيقات اللوجو الجديد في الصفحة الأولى ===== */
@@ -300,26 +289,45 @@ header {
     filter: drop-shadow(0 0 10px rgba(1, 238, 255, 0.5));
 }
 /* لما تكون الشاشة صغيرة */
+/* ========== تعديلات تجاوب اللوجو ========== */
 @media (max-width: 768px) {
-    .right-section {
-        justify-content: center; /* توسيط اللوجو في الموبايل */
-        margin-top: 30px;
-    }
-    
-    .logo-container {
-        width: 200px;
-        height: 200px;
-    }
+  .right-section {
+    justify-content: center;
+    margin: 30px auto 0;
+    width: 100%;
+    padding: 0 20px;
+    display: flex; /* تأكد من وجودها */
+  }
+  
+  .logo-container {
+    width: 220px;
+    height: 220px;
+    border-width: 2.5px;
+    margin: 0 auto; /* إضافة هذه القاعدة */
+  }
 }
 
 @media (max-width: 480px) {
-    .logo-container {
-        width: 150px;
-        height: 150px;
-        padding: 10px;
-    }
+  .right-section {
+    margin-top: 20px;
+  }
+  
+  .logo-container {
+    width: 180px;
+    height: 180px;
+    padding: 12px;
+    border-width: 2px;
+    box-shadow: 0 0 15px rgba(1, 238, 255, 0.3);
+  }
 }
 
+@media (max-width: 360px) {
+  .logo-container {
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+  }
+}
 /* About Section */
 #about {
     background-color: #322846;
