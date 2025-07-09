@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "UI UX Designer",
             "Web Developer",
             "Logo Designer", 
-        });
+        ];
 
         let currentProfession = 0;
         let charIndex = 0;
