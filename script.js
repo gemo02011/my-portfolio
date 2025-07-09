@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "UI UX Designer",
             "Graphic Design",
             "APP Developer",
-            "Web Developer",
+            "Web Developer"
         ];
 
         let currentProfession = 0;
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "UI UX Designer",
             "Graphic Design",
             "APP Developer",
-            "Web Developer",
+            "Web Developer"
         ];
 
         let currentAboutProfession = 0;
@@ -187,7 +187,8 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             if (!this.checkValidity()) {
                 e.preventDefault();
-                alert('Please fill in all required fields correctly');            }
+                alert('Please fill in all required fields correctly');
+            }
         });
     }
 });
