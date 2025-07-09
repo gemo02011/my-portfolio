@@ -3,11 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const typingElement = document.getElementById('typing');
     if (typingElement) {
         const professions = [
-            "APP Developer",
             "UI UX Designer",
+            "Graphic Design",
+            "APP Developer",
             "Web Developer",
-            "Logo Designer",
-            "Cartoon & Anime Character Designer"
         ];
 
         let currentProfession = 0;
@@ -47,11 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const typingAboutElement = document.getElementById('typing-about');
     if (typingAboutElement) {
         const aboutProfessions = [
-            "APP Developer",
             "UI UX Designer",
+            "Graphic Design",
+            "APP Developer",
             "Web Developer",
-            "Logo Designer",
-            "Cartoon & Anime Character Designer"
         ];
 
         let currentAboutProfession = 0;
