@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "APP Developer",
             "UI UX Designer",
             "Web Developer",
-            "Logo Designer", 
+            "Logo Designer" 
         ];
 
         let currentProfession = 0;
@@ -49,8 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "APP Developer",
             "UI UX Designer",
             "Web Developer",
-            "Logo Designer",
-
+            "Logo Designer"
         ];
 
         let currentAboutProfession = 0;
