@@ -8,6 +8,7 @@
             "Web Developer",
             "Logo Designer",
 
+          
         ];
 
         let currentProfession = 0;
