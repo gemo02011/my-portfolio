@@ -1,4 +1,4 @@
-                                                                                                                                                                     document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     // Typing Effect for Main Section
     const typingElement = document.getElementById('typing');
     if (typingElement) {
@@ -6,10 +6,8 @@
             "APP Developer",
             "UI UX Designer",
             "Web Developer",
-            "Logo Designer",
-
-          
-        ];
+            "Logo Designer", 
+        });
 
         let currentProfession = 0;
         let charIndex = 0;
