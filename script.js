@@ -1,12 +1,13 @@
-document.addEventListener('DOMContentLoaded', function() {
+                                                                                                                                                                     document.addEventListener('DOMContentLoaded', function() {
     // Typing Effect for Main Section
     const typingElement = document.getElementById('typing');
     if (typingElement) {
         const professions = [
-            "UI UX Designer",
-            "Graphic Design",
             "APP Developer",
-            "Web Developer"
+            "UI UX Designer",
+            "Web Developer",
+            "Logo Designer",
+
         ];
 
         let currentProfession = 0;
@@ -46,10 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const typingAboutElement = document.getElementById('typing-about');
     if (typingAboutElement) {
         const aboutProfessions = [
-            "UI UX Designer",
-            "Graphic Design",
             "APP Developer",
-            "Web Developer"
+            "UI UX Designer",
+            "Web Developer",
+            "Logo Designer",
+
         ];
 
         let currentAboutProfession = 0;
@@ -187,8 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             if (!this.checkValidity()) {
                 e.preventDefault();
-                alert('Please fill in all required fields correctly');
-            }
+                alert('Please fill in all required fields correctly');            }
         });
     }
 });
